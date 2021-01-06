@@ -539,7 +539,10 @@ namespace NBitcoin.Tests
 					_State = CoreNodeState.Running;
 					break;
 				}
-				catch { }
+				catch (Exception e)
+				{
+					Console.WriteLine(e.StackTrace);
+				}
 				if (_Process == null || _Process.HasExited)
 					break;
 			}

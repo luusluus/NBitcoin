@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Runtime.CompilerServices;
 
 namespace NBitcoin.Tests
@@ -61,12 +58,14 @@ namespace NBitcoin.Tests
 			//var builder = NodeBuilder.Create(NodeDownloadData.Argoneum.v1_4_1, Altcoins.Argoneum.Instance.Regtest, caller);
 
 			//var builder = NodeBuilder.Create(NodeDownloadData.Qtum.v0_18_3, Altcoins.Qtum.Instance.Regtest, caller);
-			
+
 			//var builder = NodeBuilder.Create(NodeDownloadData.MonetaryUnit.v2_1_6, Altcoins.MonetaryUnit.Instance.Regtest, caller);
+
+			var builder = NodeBuilder.Create(NodeDownloadData.Blocknet.v4_3_0, Altcoins.Blocknet.Instance.Regtest, caller);
 
 			//var builder = Create(NodeDownloadData.Bitcoin.v0_19_0_1, caller);
 
-			var builder = Create(NodeDownloadData.Bitcoin.v0_20_0, caller);
+			//var builder = Create(NodeDownloadData.Bitcoin.v0_20_0, caller);
 			return builder;
 		}
 

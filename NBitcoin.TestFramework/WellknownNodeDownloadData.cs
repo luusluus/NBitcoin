@@ -1368,7 +1368,7 @@ namespace NBitcoin.Tests
 				UseSectionInConfigFile = true
 			};
 		}
-		
+
 		public class MonetaryUnitNodeDownloadData
 		{
 			public NodeDownloadData v2_1_6 = new NodeDownloadData()
@@ -1395,6 +1395,38 @@ namespace NBitcoin.Tests
 					Executable = "mon/bin/monetaryunitd",
 					Hash = "af3712f4d6a526d8003198bb8c80d8fbbb97d97249ed9737a829527f8fab1e74"
 				}
+			};
+		}
+
+		public class BlocknetNodeDownloadData
+		{
+			public NodeDownloadData v4_3_0 = new NodeDownloadData()
+			{
+				Version = "4.3.0",
+				Windows = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/blocknetdx/blocknet/releases/download/v4.3.0/blocknet-4.3.0-win64.zip",
+					Archive = "blocknet-4.3.0-win64.zip",
+					Executable = "blocknet-4.3.0/bin/blocknetd.exe",
+					Hash = "f883af9d79239eb57b84cc31fa59c7ff5b7359a5a3b8d32d6d909b11828a4f38"
+				},
+				Linux = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/blocknetdx/blocknet/releases/download/v4.3.0/blocknet-4.3.0-x86_64-linux-gnu.tar.gz",
+					Archive = "blocknet-4.3.0-x86_64-linux-gnu.tar.gz",
+					Executable = "blocknet-4.3.0/bin/blocknetd",
+					Hash = "3a29363f7b6bb99077c95866b2036f1d07cd752d85fe1cfd7f4e02a283350b8f"
+				},
+				Mac = new NodeOSDownloadData()
+				{
+					DownloadLink = "https://github.com/blocknetdx/blocknet/releases/download/v4.3.0/blocknet-4.3.0-osx64.tar.gz",
+					Archive = "blocknet-4.3.0-osx64.tar.gz",
+					Executable = "blocknet-4.3.0/bin/blocknetd",
+					Hash = "499006ef79af14e539886de088a2468ad895db36c8333ced6306578b894a578f"
+				},
+				UseSectionInConfigFile = true,
+				AdditionalRegtestConfig = "minrelaytxfee=0.0000100",
+
 			};
 		}
 
@@ -1546,11 +1578,16 @@ namespace NBitcoin.Tests
 		{
 			get; set;
 		} = new QtumNodeDownloadData();
-		
+
 		public static MonetaryUnitNodeDownloadData MonetaryUnit
 		{
 			get; set;
 		} = new MonetaryUnitNodeDownloadData();
+
+		public static BlocknetNodeDownloadData Blocknet
+		{
+			get; set;
+		} = new BlocknetNodeDownloadData();
 
 		public bool UseSectionInConfigFile { get; private set; }
 		public string AdditionalRegtestConfig { get; private set; }

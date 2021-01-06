@@ -1,8 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NBitcoin.Altcoins
 {
@@ -19,7 +15,7 @@ namespace NBitcoin.Altcoins
 		public static Dystem Dystem { get; } = Dystem.Instance;
 		public static Litecoin Litecoin { get; } = Litecoin.Instance;
 		public static Feathercoin Feathercoin { get; } = Feathercoin.Instance;
-		public static Viacoin Viacoin {get; } = Viacoin.Instance;
+		public static Viacoin Viacoin { get; } = Viacoin.Instance;
 		public static Polis Polis { get; } = Polis.Instance;
 		public static Monacoin Monacoin { get; } = Monacoin.Instance;
 		public static Ufo Ufo { get; } = Ufo.Instance;
@@ -38,6 +34,7 @@ namespace NBitcoin.Altcoins
 		public static DogeCash DogeCash { get; } = DogeCash.Instance;
 		public static Qtum Qtum { get; } = Qtum.Instance;
 		public static MonetaryUnit MonetaryUnit { get; } = MonetaryUnit.Instance;
+		public static Blocknet Blocknet { get; } = Blocknet.Instance;
 
 		public static IEnumerable<INetworkSet> GetAll()
 		{
@@ -71,6 +68,7 @@ namespace NBitcoin.Altcoins
 			//yield return DogeCash;
 			yield return Qtum;
 			yield return MonetaryUnit;
+			yield return Blocknet;
 		}
 	}
 }
